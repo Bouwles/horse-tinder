@@ -117,3 +117,69 @@ All horse photos are from [Wikimedia Commons](https://commons.wikimedia.org) and
 | `ziggy-1.jpg` | Bernard DUPONT from FRANCE | CC BY-SA 2.0 | [Plains Zebra (Equus quagga), stallion portrait ... (54299246700).jpg](https://commons.wikimedia.org/wiki/File:Plains_Zebra_(Equus_quagga),_stallion_portrait_..._(54299246700).jpg) |
 
 `bojack-1.png` is BoJack Horseman (© Netflix / Tornante), supplied by the project owner for personal, non-commercial parody use. It is not from Wikimedia Commons.
+
+## Chat photos
+
+Photos the horses send in chat (`img/chat/`), also from Wikimedia Commons:
+
+| File | Author | License | Source |
+|---|---|---|---|
+| `bigtony-1.jpg` | Jakub Hałun | CC BY 4.0 | [View of Liberty Island from Staten Island Ferry, NYC, 20231002 1645 1793.jpg](https://commons.wikimedia.org/wiki/File:View_of_Liberty_Island_from_Staten_Island_Ferry,_NYC,_20231002_1645_1793.jpg) |
+| `bigtony-2.jpg` | DenesFeri | CC BY-SA 4.0 | [Em - Male Shetland pony.jpg](https://commons.wikimedia.org/wiki/File:Em_-_Male_Shetland_pony.jpg) |
+| `bjorn-1.jpg` | AstroAnthony | CC BY 4.0 | [Church of light.jpg](https://commons.wikimedia.org/wiki/File:Church_of_light.jpg) |
+| `bjorn-2.jpg` | Loïc Lété | CC0 | [Funny Horse (166725609).jpeg](https://commons.wikimedia.org/wiki/File:Funny_Horse_(166725609).jpeg) |
+| `bojack-1.jpg` | Thomas Wolf, www.foto-tw.de | CC BY-SA 3.0 | [Hollywood Sign.jpg](https://commons.wikimedia.org/wiki/File:Hollywood_Sign.jpg) |
+| `brian-1.jpg` | Pamela Norrington | CC BY-SA 2.0 | [Guiry's, interior of the pub - geograph.org.uk - 2434107.jpg](https://commons.wikimedia.org/wiki/File:Guiry%27s,_interior_of_the_pub_-_geograph.org.uk_-_2434107.jpg) |
+| `brian-2.jpg` | 4028mdk09 | CC BY-SA 3.0 | [Flehmendes Kaltblut.JPG](https://commons.wikimedia.org/wiki/File:Flehmendes_Kaltblut.JPG) |
+| `buttercup-1.jpg` | Björn S. | CC BY-SA 3.0 | [Sunflower field - panoramio (11).jpg](https://commons.wikimedia.org/wiki/File:Sunflower_field_-_panoramio_(11).jpg) |
+| `carl-1.jpg` | NASA | Public domain | [Space Shuttle Columbia launching.jpg](https://commons.wikimedia.org/wiki/File:Space_Shuttle_Columbia_launching.jpg) |
+| `casper-1.jpg` | Eva K. / Eva K. | CC BY-SA 2.5 | [Glaskugel CrystalBall.jpg](https://commons.wikimedia.org/wiki/File:Glaskugel_CrystalBall.jpg) |
+| `casper-2.jpg` | Friedrich Haag | CC BY-SA 4.0 | [Haare und Frisuren 001 2010 05 23.jpg](https://commons.wikimedia.org/wiki/File:Haare_und_Frisuren_001_2010_05_23.jpg) |
+| `chad-1.jpg` | Ser Amantio di Nicolao | CC BY-SA 4.0 | [Purple dumbbells on a pile.jpg](https://commons.wikimedia.org/wiki/File:Purple_dumbbells_on_a_pile.jpg) |
+| `chardonnay-1.jpg` | Jodie Wilson | CC BY 2.0 | [Black Stallion - Jodie.jpg](https://commons.wikimedia.org/wiki/File:Black_Stallion_-_Jodie.jpg) |
+| `chardonnay-2.jpg` | Eric Kilby | CC BY-SA 2.0 | [Newborn Horse With Tongue Out.jpg](https://commons.wikimedia.org/wiki/File:Newborn_Horse_With_Tongue_Out.jpg) |
+| `cheryl-1.jpg` | Túrelio | CC BY-SA 3.0 de | [AchtungPferd 1664.jpg](https://commons.wikimedia.org/wiki/File:AchtungPferd_1664.jpg) |
+| `concrete-1.jpg` | Lewis Clarke | CC BY-SA 2.0 | [Glasgow City , The M8 Motorway - geograph.org.uk - 5015876.jpg](https://commons.wikimedia.org/wiki/File:Glasgow_City_,_The_M8_Motorway_-_geograph.org.uk_-_5015876.jpg) |
+| `dah-1.jpg` | AlainV at English Wikipedia | Public domain | [CleancubicleSouth20050109.jpg](https://commons.wikimedia.org/wiki/File:CleancubicleSouth20050109.jpg) |
+| `diesel-1.jpg` | Bidgee | CC BY-SA 3.0 | [Still Life with Stone and Car by Jimmie Durham on Hickson Road at The Rocks.jpg](https://commons.wikimedia.org/wiki/File:Still_Life_with_Stone_and_Car_by_Jimmie_Durham_on_Hickson_Road_at_The_Rocks.jpg) |
+| `diesel-2.jpg` | Calistemon | CC BY-SA 4.0 | [Clydesdale horse at Midway Farm Stall, West Pinjarra, September 2026 04.jpg](https://commons.wikimedia.org/wiki/File:Clydesdale_horse_at_Midway_Farm_Stall,_West_Pinjarra,_September_2026_04.jpg) |
+| `dolores-1.jpg` | Lusi Lindwurm | CC BY-SA 4.0 | [Rainbow yarn for knitting, display in front of a needlework shop in Graz, Austria, GW23-100.jpg](https://commons.wikimedia.org/wiki/File:Rainbow_yarn_for_knitting,_display_in_front_of_a_needlework_shop_in_Graz,_Austria,_GW23-100.jpg) |
+| `dolores-2.jpg` | Opittman | CC0 | [Grey foal.jpg](https://commons.wikimedia.org/wiki/File:Grey_foal.jpg) |
+| `domino-1.jpg` | Dmitry Ivanov. | CC BY-SA 4.0 | [PMG-1 fire engine based on GAZ-AA.jpg](https://commons.wikimedia.org/wiki/File:PMG-1_fire_engine_based_on_GAZ-AA.jpg) |
+| `doug-1.jpg` | Bernard Gagnon | CC0 | [Foal in Mongolia.jpg](https://commons.wikimedia.org/wiki/File:Foal_in_Mongolia.jpg) |
+| `doug-2.jpg` | Rob Mitchell | CC0 | [Foal (18404879701).jpg](https://commons.wikimedia.org/wiki/File:Foal_(18404879701).jpg) |
+| `final-1.jpg` | Dan Huby | Public domain | [White horse from air.jpg](https://commons.wikimedia.org/wiki/File:White_horse_from_air.jpg) |
+| `gary-1.jpg` | EEJCC | CC BY-SA 4.0 | [Ohio welcome sign (2019).jpg](https://commons.wikimedia.org/wiki/File:Ohio_welcome_sign_(2019).jpg) |
+| `gerald-1.jpg` | Bureau of Medicine and Surgery, Department of the Navy | Public domain | [Gasmask for man and horse.jpeg](https://commons.wikimedia.org/wiki/File:Gasmask_for_man_and_horse.jpeg) |
+| `gerald-2.jpg` | Sammlung der Medien und Wissenschaft | CC BY 4.0 | [Olympia Simplex.jpg](https://commons.wikimedia.org/wiki/File:Olympia_Simplex.jpg) |
+| `gordon-1.jpg` | fir0002 flagstaffotos [at] gmail.com Canon 20D + Tamron 28-75mm f/2.8 | GFDL 1.2 | [Round hay bale at dawn02.jpg](https://commons.wikimedia.org/wiki/File:Round_hay_bale_at_dawn02.jpg) |
+| `greg-1.jpg` | Commonists | CC BY-SA 4.0 | [Face of Horse in Manno (Switzerland) 4.jpg](https://commons.wikimedia.org/wiki/File:Face_of_Horse_in_Manno_(Switzerland)_4.jpg) |
+| `greg-2.jpg` | Basile Morin | CC BY-SA 4.0 | [Water reflection of a wooden fence in a paddy field of Vang Vieng Laos a misty morning.jpg](https://commons.wikimedia.org/wiki/File:Water_reflection_of_a_wooden_fence_in_a_paddy_field_of_Vang_Vieng_Laos_a_misty_morning.jpg) |
+| `horsey-1.jpg` | Atanu Bose Photography | CC BY-SA 4.0 | [Close wing mud-puddling position of Hestinalis nama (Doubleday, 1844) - Circe.jpg](https://commons.wikimedia.org/wiki/File:Close_wing_mud-puddling_position_of_Hestinalis_nama_(Doubleday,_1844)_-_Circe.jpg) |
+| `jingles-1.jpg` | Alexandre Buisse (Nattfodd) | CC BY-SA 3.0 | [20070818-0001-strolling reindeer.jpg](https://commons.wikimedia.org/wiki/File:20070818-0001-strolling_reindeer.jpg) |
+| `juan-1.jpg` | Diego Delso | CC BY-SA 4.0 | [Machu Picchu, Perú, 2015-07-30, DD 47.JPG](https://commons.wikimedia.org/wiki/File:Machu_Picchu,_Per%C3%BA,_2015-07-30,_DD_47.JPG) |
+| `kevin-1.jpg` | A S M Jobaer | CC BY-SA 4.0 | [Gooseneck microphone on podium with stage bokeh lights 01.jpg](https://commons.wikimedia.org/wiki/File:Gooseneck_microphone_on_podium_with_stage_bokeh_lights_01.jpg) |
+| `lightning-1.jpg` | Rodhullandemu | CC BY-SA 4.0 | [Princess Royal Stand, Aintree Racecourse 2020.jpg](https://commons.wikimedia.org/wiki/File:Princess_Royal_Stand,_Aintree_Racecourse_2020.jpg) |
+| `lightning-2.jpg` | Mariegriffithsjournal | CC BY-SA 4.0 | [Horse Crossing Road during Royal Ascot 2020 with Face Masks.jpg](https://commons.wikimedia.org/wiki/File:Horse_Crossing_Road_during_Royal_Ascot_2020_with_Face_Masks.jpg) |
+| `lilhay-1.jpg` | David Mulder | CC BY-SA 2.0 | [Stage Box (16 XRLs for microphones, 4 Phones for returns) with tangled microphone cables - 2014-11-02 (by David Mulder).jpg](https://commons.wikimedia.org/wiki/File:Stage_Box_(16_XRLs_for_microphones,_4_Phones_for_returns)_with_tangled_microphone_cables_-_2014-11-02_(by_David_Mulder).jpg) |
+| `maple-1.jpg` | Charles J. Sharp | CC BY-SA 4.0 | [Elk (Alces alces alces) female Oppdal.jpg](https://commons.wikimedia.org/wiki/File:Elk_(Alces_alces_alces)_female_Oppdal.jpg) |
+| `maple-2.jpg` | Maffeth.opiana | CC BY-SA 4.0 | [Pancake with maple syrup 1.jpg](https://commons.wikimedia.org/wiki/File:Pancake_with_maple_syrup_1.jpg) |
+| `marina-1.jpg` | Tony Webster from Minneapolis, Minnesota, United States | CC BY-SA 2.0 | [Truffle oil french fries (33024792848).jpg](https://commons.wikimedia.org/wiki/File:Truffle_oil_french_fries_(33024792848).jpg) |
+| `neighington-1.jpg` | Zigzig20s | CC BY-SA 3.0 | [Match at the Will Rogers Polo Club.JPG](https://commons.wikimedia.org/wiki/File:Match_at_the_Will_Rogers_Polo_Club.JPG) |
+| `neighington-2.jpg` | istolethetv | CC BY 2.0 | [Horse face (121873636).jpg](https://commons.wikimedia.org/wiki/File:Horse_face_(121873636).jpg) |
+| `officer-1.jpg` | Tony Hisgett from Birmingham, UK | CC BY 2.0 | [NYPD Police Car 4 (27763355322).jpg](https://commons.wikimedia.org/wiki/File:NYPD_Police_Car_4_(27763355322).jpg) |
+| `pablo-1.jpg` | Leonardo da Vinci | Public domain | [Mona Lisa, by Leonardo da Vinci, from C2RMF retouched.jpg](https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg) |
+| `pablo-2.jpg` | Raja Selvaraj | CC BY 3.0 | [Rearing Horse (49097666).jpeg](https://commons.wikimedia.org/wiki/File:Rearing_Horse_(49097666).jpeg) |
+| `patches-1.jpg` | Matti Blume | CC BY-SA 4.0 | [Techno-Classica 2018, Essen (IMG 9604).jpg](https://commons.wikimedia.org/wiki/File:Techno-Classica_2018,_Essen_(IMG_9604).jpg) |
+| `pickles-1.jpg` | Alexandr frolov | CC BY-SA 4.0 | [Horse licks salt in the Altai Mountains 03.jpg](https://commons.wikimedia.org/wiki/File:Horse_licks_salt_in_the_Altai_Mountains_03.jpg) |
+| `princess-1.jpg` | J K Thorne | CC BY 4.0 | [Nautilus 73-meter (239 ft) long motor yacht. Location Poole Quay. Dorset.jpg](https://commons.wikimedia.org/wiki/File:Nautilus_73-meter_(239_ft)_long_motor_yacht._Location_Poole_Quay._Dorset.jpg) |
+| `rafael-1.jpg` | Michiel | CC BY 2.0 | [Catwalk fashion week westergas 2010.jpg](https://commons.wikimedia.org/wiki/File:Catwalk_fashion_week_westergas_2010.jpg) |
+| `raven-1.jpg` | Wilfredor | CC0 | [Snow-covered Saint-Charles Cemetery 6.jpg](https://commons.wikimedia.org/wiki/File:Snow-covered_Saint-Charles_Cemetery_6.jpg) |
+| `raven-2.jpg` | Peter O'Connor aka anemoneprojectors | CC BY-SA 2.0 | [Horse (5321453799).jpg](https://commons.wikimedia.org/wiki/File:Horse_(5321453799).jpg) |
+| `sergei-1.jpg` | Jyper at English Wikipedia | CC BY 3.0 | [Mongolian steppe.jpg](https://commons.wikimedia.org/wiki/File:Mongolian_steppe.jpg) |
+| `shadow-1.jpg` | Luc Viatour | CC BY-SA 3.0 | [Full Moon Luc Viatour.jpg](https://commons.wikimedia.org/wiki/File:Full_Moon_Luc_Viatour.jpg) |
+| `skylar-1.jpg` | Irvan Ary Maulana | CC BY-SA 4.0 | [Matcha tea latte with rosetta latte art.jpg](https://commons.wikimedia.org/wiki/File:Matcha_tea_latte_with_rosetta_latte_art.jpg) |
+| `thunder-1.jpg` | Laika ac | CC BY-SA 2.0 | [Burj Khalifa (16260269606).jpg](https://commons.wikimedia.org/wiki/File:Burj_Khalifa_(16260269606).jpg) |
+| `todd-1.jpg` | Abhijit Tembhekar from Mumbai, India | CC BY 2.0 | [Red Apple.jpg](https://commons.wikimedia.org/wiki/File:Red_Apple.jpg) |
+| `walter-1.jpg` | Carl Young | CC BY-SA 4.0 | [Horse Face Up Close.jpg](https://commons.wikimedia.org/wiki/File:Horse_Face_Up_Close.jpg) |
+| `ziggy-1.jpg` | Benh LIEU SONG | CC BY-SA 3.0 | [Lions Family Portrait Masai Mara.jpg](https://commons.wikimedia.org/wiki/File:Lions_Family_Portrait_Masai_Mara.jpg) |

@@ -20,10 +20,10 @@ Made with love by **Paul Nercessian** and **Neil Thakkar** ❤️
 
 ## What's in it
 
-- **44 horses** with bios, traits, red flags and stats. They include Big Tony (a miniature horse), Concrete (a horse statue by a motorway), Gerald ("29", actual age 41), Ziggy (definitely not a zebra) and **BoJack Horseman**.
+- **45 horses** with bios, traits, red flags and stats. They include Big Tony (a miniature horse), Concrete (a horse statue by a motorway), Gerald ("29", actual age 41), Ziggy (definitely not a zebra) and **BoJack Horseman**.
 - **Rare profiles:** Mystery Horse (censored until you swipe), Verified Horse, Celebrity Horse (1.2M followers), Definitely A Horse (a man in a horse mask) and The Final Horse.
 - **Matches** with an "IT'S A MATCH" screen, confetti, a synthesized whinny and a compatibility score. Categories include *Carrot compatibility* and *Emotional availability*.
-- **Fake chats.** Every horse has its own personality. Some text back fast, some leave you on read, and Concrete never replies. Don't mention glue.
+- **Chats that actually respond.** Ask a horse about its job, favourite food, fears, secrets or red flags and it answers in character. Horses ask you questions back and react to your answer. They get jealous if you mention another horse, and each one sends its own photos (BoJack's view of the Hollywood sign, Diesel's crushed car, Pickles' salt lick). Some text back instantly, some leave you on read, and Concrete almost never replies. Don't mention glue.
 - Swipe history, a matches and messages inbox, rewind, boost, a "pay 1 carrot" upgrade, dark mode, sound effects, and uploading your own profile photo.
 - Everything saves to your browser's localStorage.
 

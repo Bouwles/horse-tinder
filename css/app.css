@@ -69,7 +69,7 @@ body[data-side="inbox"] #v-inbox, body[data-side="history"] #v-history, body[dat
 .stack { position: relative; flex: 1; width: 100%; min-height: 0; }
 @media (min-width: 900px) {
   .deck { justify-content: center; padding-top: 0; }
-  .stack { flex: none; height: min(680px, calc(100dvh - 236px)); aspect-ratio: .68; width: auto; }
+  .stack { flex: none; height: min(680px, calc(100dvh - 252px)); aspect-ratio: .68; width: auto; }
 }
 .card { position: absolute; inset: 0; border-radius: 16px; overflow: hidden; background: #1b1714; box-shadow: var(--card-shadow); touch-action: none; user-select: none; -webkit-user-select: none; cursor: grab; transition: transform .35s; will-change: transform; }
 .card:active { cursor: grabbing; }
@@ -150,8 +150,10 @@ body.boosted #b-boost { animation: ring 1.2s infinite; }
 @keyframes ring { 50% { box-shadow: 0 0 0 8px rgba(155,81,224,.2); } }
 body[data-drag] .act { transition-duration: .12s; }
 body[data-drag="like"] #b-like, body[data-drag="nope"] #b-nope, body[data-drag="super"] #b-sup { transform: scale(1.12); }
-.legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; padding: 2px 20px 22px; color: var(--text3); font-size: 12.5px; font-weight: 500; }
+.legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; padding: 2px 20px 4px; color: var(--text3); font-size: 12.5px; font-weight: 500; }
 .legend span { display: inline-flex; align-items: center; gap: 7px; }
+.madeby { margin: 0; padding: 0 16px 10px; text-align: right; font: 600 11.5px var(--display); color: var(--text3); letter-spacing: .01em; }
+@media (max-width: 899px) { .madeby { padding: 0 14px 6px; font-size: 10.5px; margin-top: -6px; } .actions { padding-bottom: 10px; } }
 kbd { min-width: 26px; height: 24px; padding: 0 7px; display: inline-grid; place-items: center; border-radius: 6px; background: var(--surf); border: 1px solid var(--line); border-bottom-width: 2px; font: 700 11.5px var(--display); color: var(--text2); }
 
 /* ─── empty deck ─── */
@@ -231,7 +233,15 @@ img.blur { filter: blur(6px); }
 .set label i { flex: none; width: 44px; height: 26px; border-radius: 13px; background: var(--surf3); position: relative; transition: background .2s; }
 .set label i::after { content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.3); transition: left .2s; }
 .set label input:checked + i { background: var(--like); } .set label input:checked + i::after { left: 21px; }
-.foot { color: var(--text3); font-size: 12px; text-align: center; margin: 8px 0 0; }
+.foot { color: var(--text3); font-size: 12px; text-align: center; margin: 8px 0 0; line-height: 1.6; }
+.source { display: flex; align-items: center; gap: 12px; padding: 12px 14px; margin-bottom: 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--surf); color: var(--text); text-decoration: none; transition: border-color .15s, background .15s; }
+.source:hover { border-color: var(--g1); }
+.source .gh { width: 36px; height: 36px; border-radius: 10px; background: var(--text); color: var(--surf); display: grid; place-items: center; flex: none; }
+.source .gh svg { width: 20px; height: 20px; }
+.source > span:nth-child(2) { flex: 1; min-width: 0; }
+.source b { display: block; font: 700 14.5px var(--display); }
+.source small { color: var(--text2); font-size: 12.5px; }
+.source > .ic { color: var(--text3); font-size: 18px; }
 
 /* ─── mobile tabs ─── */
 .tabs { display: flex; border-top: 1px solid var(--line); background: var(--surf); padding: 4px 6px max(6px, env(safe-area-inset-bottom)); }
@@ -306,7 +316,9 @@ img.blur { filter: blur(6px); }
 .msg { max-width: min(76%, 480px); animation: bub .25s cubic-bezier(.3,1.5,.5,1); }
 @keyframes bub { from { transform: scale(.6); opacity: 0; } }
 .msg span { display: inline-block; padding: 9px 14px; border-radius: 20px; background: var(--surf2); overflow-wrap: anywhere; }
-.msg img { display: block; width: 200px; border-radius: 16px; margin-bottom: 3px; }
+.msg img { display: block; width: 220px; max-width: 100%; border-radius: 16px; margin-bottom: 4px; }
+.msg img.blur { filter: blur(14px); }
+.msg.them img + span { border-top-left-radius: 6px; }
 .msg.me { align-self: flex-end; transform-origin: right; text-align: right; } .msg.me span { background: var(--grad); color: #fff; border-bottom-right-radius: 6px; text-align: left; }
 .msg.them { align-self: flex-start; transform-origin: left; } .msg.them span { border-bottom-left-radius: 6px; }
 .seen { align-self: flex-end; color: var(--text3); font-size: 11.5px; margin-top: -2px; }

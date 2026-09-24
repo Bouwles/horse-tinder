@@ -6,6 +6,11 @@ const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&
 const rand = (a) => a[Math.floor(Math.random() * a.length)];
 const byId = Object.fromEntries(HORSES.map((h) => [h.id, h]));
 const desk = () => matchMedia('(min-width: 900px)').matches;
+const SHORT = { bigtony: ['Big Tony', 'big tony|tony'], neighington: ['Sir Neighington', 'neighington'], lilhay: ['Lil Hay', 'lil hay'], final: ['The Final Horse', 'final horse'], officer: ['Officer Clip-Clop', 'clip-clop|officer'], horsey: ['Horsey McHorseface', 'horsey'] };
+const OTHERS = HORSES.filter((h) => !['dah', 'mystery'].includes(h.id)).map((h) => {
+  const [name, re] = SHORT[h.id] || [h.name.split(' ')[0], h.name.split(' ')[0].toLowerCase()];
+  return { id: h.id, name, re: new RegExp(`\\b(${re})\\b`, 'i') };
+});
 
 // ───── icons ─────
 const ICONS = {
@@ -30,8 +35,10 @@ const ICONS = {
   check: '<path d="M20 6 9 17l-5-5"/>',
   camera: '<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>',
   flag: '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/>',
+  ext: '<path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
 };
 const FILLED = new Set(['heart', 'star', 'zap']);
+const GH = '<svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>';
 const ic = (n) => `<svg class="ic${FILLED.has(n) ? ' f' : ''}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n]}</svg>`;
 $$('[data-ic]').forEach((el) => el.insertAdjacentHTML('afterbegin', ic(el.dataset.ic)));
 
@@ -41,9 +48,9 @@ const save = (k, v) => { try { localStorage.setItem('ht.' + k, JSON.stringify(v)
 const S = {
   settings: load('settings', { dark: matchMedia('(prefers-color-scheme: dark)').matches, sound: true, name: '', show: 'all', onboarded: false }),
   swipes: load('swipes', []), matches: load('matches', []), chats: load('chats', {}),
-  unread: load('unread', {}), likes: load('likes', 25), supers: load('supers', 3), round: load('round', 1),
+  unread: load('unread', {}), likes: load('likes', 25), supers: load('supers', 3), round: load('round', 1), cmeta: load('cmeta', {}),
 };
-const persist = () => ['settings', 'swipes', 'matches', 'chats', 'unread', 'likes', 'supers', 'round'].forEach((k) => save(k, S[k]));
+const persist = () => ['settings', 'swipes', 'matches', 'chats', 'unread', 'likes', 'supers', 'round', 'cmeta'].forEach((k) => save(k, S[k]));
 
 // ───── sound (WebAudio synth, no assets) ─────
 let ac;
@@ -336,59 +343,59 @@ function openChat(id) {
       <div><b>${esc(h.name)}${badges(h)}</b>${h.id === 'concrete' ? '<small class="off">Last active 2008</small>' : '<small>Active now in the paddock</small>'}</div>
       <button class="icon" id="cprof" aria-label="View profile">${ic('info')}</button><button class="icon" id="cun" aria-label="Unmatch" title="Unmatch">${ic('more')}</button></header>
     <div class="msgs" id="msgs"></div>
-    <div class="quick">${PICKUP.map((p) => `<button>${esc(p)}</button>`).join('')}<button data-carrot>🥕 Send a carrot</button></div>
+    <div class="quick" id="quick"></div>
     <form id="cform"><input id="cin" placeholder="Say something horse-y…" autocomplete="off" maxlength="300"><button aria-label="Send">${ic('send')}</button></form></div>
     <aside class="chat-prof">${profileHTML(h)}</aside>`;
   c.querySelector('.back').onclick = closeChat; $('#cprof').onclick = () => openProfile(h, false);
   $('#cun').onclick = () => { if (confirm(`Unmatch ${h.name}? They'll be fine. (They won't.)`)) unmatch(id, false); };
-  c.querySelectorAll('.quick button').forEach((b) => (b.onclick = () => send(b.dataset.carrot !== undefined ? '🥕' : b.textContent)));
   $('#cform').onsubmit = (e) => { e.preventDefault(); const v = $('#cin').value.trim(); if (v) send(v); $('#cin').value = ''; };
-  drawMsgs(); updateHud(); if (matchMedia('(pointer: fine)').matches) $('#cin').focus();
+  drawMsgs(); renderQuick(); updateHud(); if (matchMedia('(pointer: fine)').matches) $('#cin').focus();
+}
+const meta = (id) => (S.cmeta[id] = S.cmeta[id] || {});
+function renderQuick() {
+  const q = $('#quick'); if (!q) return; const m = meta(openId); m.chips = m.chips || [];
+  let pool = QUICK.filter((x) => !m.chips.includes(x)); if (pool.length < 4) { m.chips = []; pool = [...QUICK]; }
+  const chips = pool.sort(() => Math.random() - 0.5).slice(0, 4);
+  q.innerHTML = chips.map((x) => `<button>${esc(x)}</button>`).join('') + '<button data-carrot>🥕 Send a carrot</button>';
+  q.querySelectorAll('button').forEach((b) => (b.onclick = () => { if (b.dataset.carrot === undefined) m.chips.push(b.textContent); send(b.dataset.carrot !== undefined ? '🥕' : b.textContent); }));
 }
 function closeChat() { openId = null; $('#chat').classList.remove('show'); updateHud(); }
 function drawMsgs(typing) {
   const box = $('#msgs'); if (!box) return; const h = byId[openId], list = S.chats[openId] || [];
   const when = new Date((S.matches.find((m) => m.id === openId) || {}).ts || Date.now()).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
   box.innerHTML = `<div class="mhead">${avImg(h)}<p>You matched with <b>${esc(h.name)}</b></p><small>${when}</small></div>` +
-    list.map((m, i) => `<div class="msg ${m.me ? 'me' : 'them'}">${m.img ? `<img src="${m.img}" alt="">` : ''}${m.t ? `<span>${esc(m.t)}</span>` : ''}</div>${m.me && i === list.length - 1 && !typing && m.seen ? '<small class="seen">Seen</small>' : ''}`).join('') +
+    list.map((m, i) => `<div class="msg ${m.me ? 'me' : 'them'}">${m.img ? `<img src="${m.img}" alt=""${m.blur ? ' class="blur"' : ''}>` : ''}${m.t ? `<span>${esc(m.t)}</span>` : ''}</div>${m.me && i === list.length - 1 && !typing && m.seen ? '<small class="seen">Seen</small>' : ''}`).join('') +
     (typing ? `<div class="msg them typing"><span><i></i><i></i><i></i></span>${h.typing ? `<small>${esc(h.name.split(' ')[0])} ${esc(h.typing)}…</small>` : ''}</div>` : '');
   box.scrollTop = box.scrollHeight;
 }
-function send(t) { const id = openId; if (!id) return; S.chats[id].push({ me: 1, t, ts: Date.now() }); persist(); sfx('send'); drawMsgs(); updateHud(); reply(id, t); }
+function send(t) { const id = openId; if (!id) return; S.chats[id].push({ me: 1, t, ts: Date.now() }); persist(); sfx('send'); drawMsgs(); renderQuick(); updateHud(); reply(id, t); }
 const pend = {};
 function reply(id, text) {
   const h = byId[id]; clearTimeout(pend[id]);
   if (/glue|dog food|lasagn|horse meat|burger/i.test(text)) { pend[id] = setTimeout(() => { push(id, 'WHAT did you just say'); setTimeout(() => unmatch(id, true), 1400); }, 900); return; }
   const seen = () => { const l = S.chats[id]; if (l && l.length) l[l.length - 1].seen = 1; persist(); };
   if (Math.random() < (h.ghost || 0.04)) { pend[id] = setTimeout(() => { seen(); if (openId === id) drawMsgs(); }, 1500); return; }
-  const delay = h.fast ? 300 : h.slow ? 4200 : 900 + Math.random() * 1500;
-  pend[id] = setTimeout(() => { seen(); if (openId === id) drawMsgs(true); pend[id] = setTimeout(() => horseSays(id, false, text), h.fast ? 400 : h.typing ? 3200 : 1200 + Math.random() * 1400); }, delay);
+  const out = chatReply(h, meta(id), text, { others: OTHERS, you: S.settings.name || null }); persist();
+  const typeFor = (m) => (h.fast ? 250 : h.slow ? 3000 : h.typing ? 2600 : 700 + Math.min(2200, (m.t || '').length * 35) + (m.img ? 900 : 0));
+  const deliver = (i) => {
+    if (i >= out.length) return;
+    if (openId === id) drawMsgs(true);
+    pend[id] = setTimeout(() => { push(id, out[i].t, out[i].img, out[i].blur); if (i + 1 < out.length) pend[id] = setTimeout(() => deliver(i + 1), h.fast ? 150 : 500); }, typeFor(out[i]));
+  };
+  pend[id] = setTimeout(() => { seen(); deliver(0); }, h.fast ? 200 : h.slow ? 2500 : 500 + Math.random() * 900);
 }
-function horseSays(id, opener, text = '') {
-  const h = byId[id]; if (!matched(id)) return; let out = [];
-  if (text === '🥕') out = [rand(['A CARROT 😭', 'you remembered 🥕', 'ok now i HAVE to marry you', '*crunch crunch* 🥕'])];
-  if (!out.length && text && h.kw) for (const [k, v] of Object.entries(h.kw)) if (new RegExp(k, 'i').test(text)) { out = [rand(v)]; break; }
-  if (!out.length && text) for (const [re, v] of KW) if (re.test(text)) {
-    if (v === '__PIC__') {
-      const pics = h.photos.filter((p) => p.src && !p.fit);
-      const img = id === 'dah' ? 'img/horses/dah-2.jpg' : !pics.length || Math.random() < 0.3 ? 'img/horses/misc-1.jpg' : rand(pics).src;
-      out = [{ img }, rand(['here u go 😏', 'me rn', 'stable pic as requested', "don't show ur friends"])];
-    } else if (v !== '__GLUE__') out = [rand(v)];
-    break;
-  }
-  if (!out.length) out = [Math.random() < 0.72 ? rand(h.lines) : rand(GENERIC)];
-  if (opener) out = [rand(h.lines)];
-  if (Math.random() < 0.3 && !opener) out.push(rand(Math.random() < 0.5 ? h.lines : GENERIC));
-  const fmt = (s) => { s = s.replace('{msg}', text || '...').replace('{you}', you()); return h.caps ? s.toUpperCase() : h.lower ? s.toLowerCase() : s; };
-  out.forEach((m, i) => setTimeout(() => push(id, typeof m === 'string' ? fmt(m) : null, m.img), i * (h.fast ? 350 : 1100)));
+function horseSays(id, opener) {
+  const h = byId[id]; if (!matched(id)) return;
+  const out = chatReply(h, meta(id), '', { others: OTHERS, you: S.settings.name || null, opener }); persist();
+  out.forEach((m, i) => setTimeout(() => push(id, m.t, m.img, m.blur), i * 1200));
 }
-function push(id, t, img) {
-  if (!matched(id)) return; S.chats[id].push({ t, img, ts: Date.now() });
+function push(id, t, img, blur) {
+  if (!matched(id)) return; S.chats[id].push({ t, img, blur: blur ? 1 : undefined, ts: Date.now() });
   if (openId !== id) { S.unread[id] = (S.unread[id] || 0) + 1; toast(`${avImg(byId[id])}<span><b>${esc(byId[id].name)}</b> ${esc(t || 'sent a photo')}</span>`); }
   persist(); sfx('msg'); if (openId === id) drawMsgs(); updateHud();
 }
 function unmatch(id, byHorse) {
-  S.matches = S.matches.filter((m) => m.id !== id); delete S.chats[id]; delete S.unread[id]; persist();
+  S.matches = S.matches.filter((m) => m.id !== id); delete S.chats[id]; delete S.unread[id]; delete S.cmeta[id]; persist();
   if (openId === id) closeChat(); updateHud();
   if (byHorse) { sfx('sad'); toast(`💔 <span><b>${esc(byId[id].name)}</b> unmatched you. Never mention glue.</span>`, 3500); }
 }
@@ -451,14 +458,15 @@ function renderMe() {
       <button id="srefill"><span>Refill likes<small>Costs one (1) carrot</small></span>🥕</button>
       <button id="sreset" class="danger"><span>Reset everything<small>Matches, chats and history</small></span></button>
     </div>
-    <p class="foot">Made with love by Paul Nercessian &amp; Neil Thakkar<br>Photos via Wikimedia Commons (see CREDITS.md)</p>`;
+    <a class="source" href="https://github.com/Bouwles/horse-tinder" target="_blank" rel="noopener"><span class="gh">${GH}</span><span><b>View source code</b><small>github.com/Bouwles/horse-tinder</small></span>${ic('ext')}</a>
+    <p class="foot">Made with love by Paul Nercessian and Neil Thakkar<br>Photos via Wikimedia Commons (see CREDITS.md)</p>`;
   $('#nm').oninput = (e) => { st.name = e.target.value.trim(); persist(); updateHud(); };
   $('#sdark').onchange = (e) => { st.dark = e.target.checked; applyTheme(); persist(); };
   $('#ssnd').onchange = (e) => { st.sound = e.target.checked; persist(); updateHud(); };
   v.querySelectorAll('[data-s]').forEach((b) => (b.onclick = () => { st.show = b.dataset.s; persist(); buildDeck(); render(); renderMe(); }));
   $('#sboost').onclick = startBoost;
   $('#srefill').onclick = () => paywall('likes');
-  $('#sreset').onclick = () => { if (confirm('Reset all matches, chats and history?')) { ['swipes', 'matches', 'chats', 'unread', 'likes', 'supers', 'round'].forEach((k) => localStorage.removeItem('ht.' + k)); location.reload(); } };
+  $('#sreset').onclick = () => { if (confirm('Reset all matches, chats and history?')) { ['swipes', 'matches', 'chats', 'unread', 'likes', 'supers', 'round', 'cmeta'].forEach((k) => localStorage.removeItem('ht.' + k)); location.reload(); } };
   $('#upl').onchange = (e) => {
     const f = e.target.files[0]; if (!f) return; const r = new FileReader();
     r.onload = () => { const im = new Image(); im.onload = () => {

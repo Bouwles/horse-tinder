@@ -293,17 +293,4 @@ const SLIDES = {
 };
 
 const GENERIC = ["neigh", "u got carrots?", "send stable pics", "wyd later 🐴", "my owner isn't home", "lol", "hay 👋", "brb someone opened the feed bag", "sorry was rolling in mud", "whinny whinny 😂", "ngl ur kinda cute for a biped", "🥕?", "no thoughts just hay", "u up? (standing up. i sleep standing up)"];
-const KW = [
-  [/glue|dog food|lasagn|horse meat|burger/i, '__GLUE__'],
-  [/carrot|🥕/i, ["did someone say CARROT", "🥕🥕🥕 marry me", "a carrot? for ME?", "i would do crimes for a carrot"]],
-  [/^(hi|hey|hello|hay|sup|yo|hola|heyy+)\b/i, ["hay 👋", "neigh ;)", "sup", "hiiii", "hay there"]],
-  [/pic|photo|selfie|stable/i, '__PIC__'],
-  [/ride|saddle/i, ["whoa whoa buy me dinner first", "saddle? on the FIRST date??", "u have to earn the saddle"]],
-  [/love|marry|wife|husband|boyfriend|girlfriend/i, ["already?? ok i'm in", "let's get a stable together", "love is a strong word. so is hay"]],
-  [/date|meet|dinner|drink/i, ["wanna go stand in a field together", "i know a great trough downtown", "dinner at mine? it's hay. it's always hay"]],
-  [/wyd|hru|how are you|what.*up/i, ["just standing", "eating. always eating", "staring at a wall for 3 hrs, u?", "rolling in mud, the usual"]],
-  [/lol|haha|lmao|😂/i, ["lmao", "whinny whinny 😂", "ur funny for a biped"]],
-  [/apple|sugar/i, ["APPLE?? 🍎", "sugar cubes are my weakness"]],
-];
 const COMPAT_CATS = ['Carrot compatibility', 'Stable chemistry', 'Gallop energy', 'Neigh frequency', 'Emotional availability', 'Mane-tenance level', 'Hay preference alignment', 'Trot synchronicity', 'Barn vibes', 'Hoof size compatibility', 'Fly-swat teamwork', 'Sugar cube tolerance'];
-const PICKUP = ["hay there 👋", "u got carrots? 🥕", "send stable pics", "what's your favourite gait?", "come here often? 🌾", "i'd let you eat my garden"];
