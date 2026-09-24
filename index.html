@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Horse Tinder</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐴</text></svg>">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body data-tab="swipe" data-side="inbox">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><linearGradient id="brand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fd2f6e"/><stop offset="1" stop-color="#ff7a45"/></linearGradient></defs>
+  <symbol id="mark" viewBox="0 0 32 32">
+    <path d="M8.5 27.5V15a7.5 7.5 0 0 1 15 0v12.5" fill="none" stroke="url(#brand)" stroke-width="6.5" stroke-linecap="round"/>
+    <g fill="#fff" opacity=".9"><circle cx="8.5" cy="24" r="1.1"/><circle cx="8.5" cy="18.5" r="1.1"/><circle cx="23.5" cy="24" r="1.1"/><circle cx="23.5" cy="18.5" r="1.1"/><circle cx="11" cy="10.5" r="1.1"/><circle cx="21" cy="10.5" r="1.1"/></g>
+  </symbol>
+</svg>
+
+<div class="app">
+  <aside class="sidebar">
+    <header class="side-top">
+      <button class="me-chip" data-go="me"><span class="me-ava" id="me-ava"></span><b id="me-name">You</b></button>
+      <button class="icon snd" aria-label="Toggle sound"></button>
+      <button class="icon" id="themebtn" aria-label="Toggle dark mode"></button>
+    </header>
+    <nav class="side-tabs">
+      <button data-tab="inbox">Matches <i class="badge" hidden></i></button>
+      <button data-tab="history">History</button>
+      <button data-tab="me">Profile</button>
+    </nav>
+    <div class="side-body">
+      <section class="view" id="v-inbox"></section>
+      <section class="view" id="v-history"></section>
+      <section class="view" id="v-me"></section>
+    </div>
+  </aside>
+
+  <main class="stage">
+    <header class="top">
+      <div class="logo"><svg class="mark"><use href="#mark"/></svg><b>horse tinder</b></div>
+      <span class="tagline">Find your stablemate.</span>
+      <button class="icon snd mob" aria-label="Toggle sound"></button>
+      <div class="hud">
+        <span class="h-like" data-ic="heart"><b id="h-likes">25</b> likes left</span>
+        <span class="h-sup" data-ic="star"><b id="h-sup">3</b> super likes</span>
+        <span class="h-match" data-ic="chat"><b id="h-match">0</b> matches</span>
+      </div>
+    </header>
+    <div class="deck">
+      <div class="stack" id="stack"></div>
+      <div class="actions">
+        <button class="act sm rew" id="b-rew" data-ic="rewind" aria-label="Rewind" title="Rewind (Z)"></button>
+        <button class="act nope" id="b-nope" data-ic="x" aria-label="Neigh" title="Neigh (←)"></button>
+        <button class="act super" id="b-sup" data-ic="star" aria-label="Super like" title="Super like (Space)"></button>
+        <button class="act like" id="b-like" data-ic="heart" aria-label="Like" title="Like (→)"></button>
+        <button class="act sm boost" id="b-boost" data-ic="zap" aria-label="Boost" title="Boost"></button>
+      </div>
+    </div>
+    <footer class="legend">
+      <span><kbd>←</kbd> Neigh</span><span><kbd>→</kbd> Like</span><span><kbd>Space</kbd> Super like</span>
+      <span><kbd>↓</kbd> Open profile</span><span><kbd>Z</kbd> Rewind</span><span>Click photo edges to flip photos</span>
+    </footer>
+  </main>
+
+  <nav class="tabs">
+    <button data-tab="swipe" data-ic="shoe"><span>Swipe</span></button>
+    <button data-tab="inbox" data-ic="chat"><span>Matches</span><i class="badge" hidden></i></button>
+    <button data-tab="history" data-ic="clock"><span>History</span></button>
+    <button data-tab="me" data-ic="user"><span>Profile</span></button>
+  </nav>
+
+  <div id="chat" class="chat"></div>
+  <div id="scrim" class="scrim"></div>
+  <div id="sheet" class="sheet"></div>
+  <div id="match" class="overlay match"></div>
+  <div id="toasts" class="toasts"></div>
+
+  <div id="onb" class="overlay onb">
+    <div class="mosaic" id="mosaic"></div>
+    <div class="panel">
+      <div class="logo big"><svg class="mark"><use href="#mark"/></svg><b>horse tinder</b></div>
+      <p class="lede">44 single horses near you. One of them is BoJack Horseman.</p>
+      <ul class="how">
+        <li><kbd>→</kbd><span><b>Swipe right</b> to like</span></li>
+        <li><kbd>←</kbd><span><b>Swipe left</b> to neigh</span></li>
+        <li><kbd>↑</kbd><span><b>Swipe up</b> or Space to super like</span></li>
+      </ul>
+      <input id="onb-name" placeholder="Your horse name" maxlength="24" autocomplete="off">
+      <button class="btn primary" id="onb-go">Start swiping</button>
+      <small>By continuing you confirm you are a horse.</small>
+    </div>
+  </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

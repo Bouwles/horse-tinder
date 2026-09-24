@@ -1,0 +1,7 @@
+{
+  "name": "horse-tinder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tinder, but for horses.",
+  "scripts": { "start": "node server.js" }
+}
